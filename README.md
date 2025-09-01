@@ -2,7 +2,7 @@
 
 ## 📌 Project Summary
 This repository demonstrates a **firmware security triage workflow** for a TP-Link router image. It focuses on **supply-chain assurance**, **SBOM/VEX-driven vulnerability analysis**, and **safe emulation with adversarial tests** — aligning with aerospace/defense assurance practices.
-NOTE: Credit to this work as it was a follow along for the course *Beginner's Guide to IoT and Hardware Hacking* from TCM Security (TCM Security (https://academy.tcm-sec.com/p/beginner-s-guide-to-iot-and-hardware-hacking)) and Andrew Bellini (https://www.linkedin.com/in/andrew-bellini/)
+NOTE: Credit to this work as it was a follow along for the course *Beginner's Guide to IoT and Hardware Hacking* from TCM Security (https://academy.tcm-sec.com/p/beginner-s-guide-to-iot-and-hardware-hacking) and Andrew Bellini (https://www.linkedin.com/in/andrew-bellini/)
 **Key outcomes:**
 - Extract firmware and identify components
 - Generate **SBOM (CycloneDX)** and perform **vulnerability scans**
@@ -128,4 +128,5 @@ tp-link-firmware-security/
 - CISA — *SBOM Myths vs. Facts*
 - DO-326A / ED-202A — *Airworthiness Security Process*
 - (Add vendor advisory links and CVEs you find during analysis)
+
 
