@@ -6,8 +6,10 @@ NOTE: Credit to this work as it was a follow along for the course *Beginner's Gu
 **Key outcomes:**
 - Extract firmware and identify components
 - Perform **vulnerability scans**
-- **Emulate** firmware safely in QEMU (FirmAE/Firmadyne)
+- Recon and Hardware OSINT
+- UART Shell and Live Enumeration
 - Run **adversarial tests** (web UI, UPnP, DHCP) in isolation
+- Reverse Engineer Firmware
 - Document **findings and mitigations**
 
 > ⚠️ Research use only. Do not test on production networks. Keep analysis in an isolated lab/emulator.
@@ -16,6 +18,8 @@ NOTE: Credit to this work as it was a follow along for the course *Beginner's Gu
 
 ## ⚙️ Tools
 - `binwalk` – firmware extraction
+- `Pulseview` - logic analysis
+
 - `tcpdump` / `tshark` – capture
 - `ffuf` / `gobuster` / `curl` – adversarial HTTP tests
 
@@ -104,6 +108,7 @@ tp-link-firmware-security/
 - CISA — *SBOM Myths vs. Facts*
 - DO-326A / ED-202A — *Airworthiness Security Process*
 - (Add vendor advisory links and CVEs you find during analysis)
+
 
 
 
