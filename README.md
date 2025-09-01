@@ -16,9 +16,6 @@ NOTE: Credit to this work as it was a follow along for the course *Beginner's Gu
 
 ## ⚙️ Tools
 - `binwalk` – firmware extraction
-- `syft` – SBOM generation (CycloneDX)
-- `grype` – vulnerability scanning (CVE/NVD)
-- `firmAE` or `Firmadyne` – QEMU-based emulation
 - `tcpdump` / `tshark` – capture
 - `ffuf` / `gobuster` / `curl` – adversarial HTTP tests
 
@@ -28,9 +25,7 @@ NOTE: Credit to this work as it was a follow along for the course *Beginner's Gu
 ```
 1) Acquire stock TP-Link firmware (.bin) → put in /firmware and record hash
 2) Extract with binwalk → write output to /extracted
-3) Generate SBOM with syft → save to /sbom (CycloneDX JSON)
-4) Scan vulnerabilities with grype → save to /reports
-5) Emulate in FirmAE/Firmadyne → keep notes in /emulation/setup.md
+3) Research for vulnerabilities → save to /reports
 6) Run adversarial tests (web UI, UPnP, DHCP) → store pcaps in /emulation/pcap
 7) Document findings + mitigations → /reports/triage-notes.md, /hardening/mitigations.md
 ```
@@ -46,24 +41,6 @@ sha256sum firmware.bin > firmware.sha256
 
 # back to repo root
 binwalk -eM firmware/firmware.bin -C extracted
-```
-
-### SBOM & vulnerability scan
-```bash
-# SBOM (CycloneDX JSON)
-syft dir:./extracted -o cyclonedx-json > sbom/sbom.json
-
-# Vulnerability scan
-grype dir:./extracted -o json > reports/vuln-report.json
-```
-
-### Emulation (example FirmAE workflow)
-```bash
-# Follow /emulation/setup.md for your host; example outline:
-# 1) clone FirmAE
-# 2) place firmware in FirmAE images folder
-# 3) run analysis scripts; note assigned tap IP/ports
-# 4) browse emulated web UI; confirm services (http/https/ssh/telnet)
 ```
 
 ### Adversarial HTTP tests (examples)
@@ -99,7 +76,6 @@ ST:ssdp:all
 tp-link-firmware-security/
 ├─ firmware/            # stock .bin + firmware.sha256
 ├─ extracted/           # binwalk output
-├─ sbom/                # SBOM (CycloneDX JSON)
 ├─ reports/
 │  ├─ vuln-report.json
 │  └─ triage-notes.md
@@ -128,5 +104,6 @@ tp-link-firmware-security/
 - CISA — *SBOM Myths vs. Facts*
 - DO-326A / ED-202A — *Airworthiness Security Process*
 - (Add vendor advisory links and CVEs you find during analysis)
+
 
 
