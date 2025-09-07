@@ -33,21 +33,16 @@ This project documents a full hardware + firmware security triage of the TP-Link
 
 ## 📂 Repository Layout
 ```
-tp-link-firmware-security/
-├─ firmware/            # stock .bin + firmware.sha256
-├─ extracted/           # binwalk output
+IoT-Router-Triage/
+├─ firmware/                 # raw flash dumps (wr841n_1.bin, wr841n_2.bin)
+├─ extracted/                # binwalk extracted filesystems
 ├─ reports/
-│  ├─ vuln-report.json
-│  └─ triage-notes.md
-├─ emulation/
-│  ├─ setup.md
-│  └─ pcap/
-├─ hardening/
-│  ├─ mitigations.md
-│  └─ openwrt-configs/
-└─ tools/
-   ├─ triage-checklist.md
-   └─ commands-cheatsheet.md
+│   └─ tl-wr841n-triage.md   # polished, narrative walk-through
+├─ tools/
+│   ├─ uart-cheatsheet.md
+│   ├─ firmware-triage-checklist.md
+│   └─ hash-cracking-guidance.md
+└─ README.md
 ```
 
 ---
@@ -60,10 +55,12 @@ tp-link-firmware-security/
 ---
 
 ## 📖 References
+- TCM Security Beginner's Guide to IoT and Hardware Hacking
 - NIST SP 800-160 Vol. 2 — *Developing Cyber Resilient Systems*
 - CISA — *SBOM Myths vs. Facts*
 - DO-326A / ED-202A — *Airworthiness Security Process*
 - (Add vendor advisory links and CVEs you find during analysis)
+
 
 
 
